@@ -22,6 +22,17 @@ app.set('view engine', 'ejs');
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
+
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(express.static(path.join(__dirname, 'public')));
+
+// add route middleware here
+app.use('/', index);
+app.use('/auth', authRoutes);
+app.use('/user', userRoutes);
 app.use(logger('dev'));
 app.use(cookieParser());
 app.use(bodyParser.json());
@@ -32,16 +43,6 @@ app.use(session({
   resave: false,
   saveUninitialized: true
 }));
-app.use(passport.initialize());
-app.use(passport.session());
-
-app.use(express.static(path.join(__dirname, 'public')));
-
-// add route middleware here
-app.use('/', index);
-app.use('/auth', authRoutes);
-app.use('/user', userRoutes);
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');
