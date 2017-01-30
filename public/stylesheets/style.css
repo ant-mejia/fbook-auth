@@ -82,10 +82,6 @@ input[type="password"] {
   width: 100%;
 }
 
-#sign-up {
-  margin: 90px auto;
-}
-
 @media only screen and (max-width: 992px) {
   .parallax-container .section {
     position: absolute;
