@@ -7,7 +7,8 @@ const authHelpers = require('../auth/auth-helpers');
 // add route here
 router.get('/', authHelpers.loginRequired, (req, res, next) => {
   res.render('user/index', {
-    user: req.user.dataValues
+    user: req.user.dataValues,
+    title: 'Fazbook Dashboard'
   });
 });
 

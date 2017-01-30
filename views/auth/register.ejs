@@ -1,39 +1,54 @@
+<!DOCTYPE html>
+<html>
 <% include ../partials/head.ejs %>
   <body>
     <% include ../partials/header.ejs %>
-    <main>
+    <main id="sign-up">
       <div class="container">
         <form action="/auth/register" method="post">
-          <div>
-            <label>Username:</label>
-            <input type="text" name="username"/>
+          <div class="input-field">
+            <input id="username" type="text" name="username" class="validate">
+            <label for="username">Username</label>
+          </div>
+          <div class="row">
+            <div class="input-field">
+              <input id="password" type="password" name="password" class="validate">
+              <label for="password">Password</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field">
+              <input id="firstname" type="text" name="firstName" class="validate">
+              <label for="firstname">First Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field">
+              <input id="lastname" type="text" name="lastName" class="validate">
+              <label for="lastname">Last Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field">
+              <input id="email" type="email" name="email" class="validate" data-error="Incorrect Email">
+              <label for="email">Email Address</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field">
+              <input id="dob" type="date" name="dob" class="datepicker">
+              <label for="dob">Date of Birth</label>
+            </div>
           </div>
           <div>
-            <label>Password:</label>
-            <input type="password" name="password"/>
-          </div>
-          <div>
-            <label>First Name:</label>
-            <input type="text" name="firstName"/>
-          </div>
-          <div>
-            <label>Last Name:</label>
-            <input type="text" name="lastName"/>
-          </div>
-          <div>
-            <label>Email:</label>
-            <input type="text" name="email"/>
-          </div>
-          <div>
-            <label>Date of Birth:</label>
-            <input type="date" name="dob"/>
-          </div>
-          <div>
-            <input type="submit" value="Register"/>
+            <div class="col s12">
+              <button type="submit" class="waves-effect waves-green btn-flat mauto">Register</button>
+            </div>
           </div>
         </form>
       </div>
     </main>
     <% include ../partials/footer.ejs %>
   </body>
+  <% include ../partials/scripts.ejs %>
 </html>
