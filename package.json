@@ -21,9 +21,7 @@
     "pg-hstore": "^2.3.2",
     "sequelize": "^3.30.0",
     "sequelize-cli": "^2.5.1",
-    "serve-favicon": "~2.3.0"
-  },
-  "devDependencies": {
+    "serve-favicon": "~2.3.0",
     "nodemon": "^1.11.0"
   }
 }
